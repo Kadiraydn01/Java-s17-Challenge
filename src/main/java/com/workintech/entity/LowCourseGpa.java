@@ -1,4 +1,11 @@
 package com.workintech.entity;
 
-public class LowCourseGpa {
+import org.springframework.stereotype.Component;
+
+@Component
+public class LowCourseGpa implements CourseGpa{
+    @Override
+    public int getGpa() {
+        return 3;
+    }
 }

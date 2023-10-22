@@ -4,6 +4,7 @@ import com.workintech.dto.CourseResponse;
 import com.workintech.dto.CourseResponseFactory;
 import com.workintech.entity.Course;
 import com.workintech.entity.CourseGpa;
+import com.workintech.entity.Grade;
 import com.workintech.exceptions.CourseException;
 import com.workintech.exceptions.CourseValidation;
 import jakarta.annotation.PostConstruct;
@@ -29,6 +30,7 @@ public class CourseController {
     @PostConstruct
     public void init() {
         courses = new ArrayList<>();
+        courses.add(1, new Course(1,"Math",3));
     }
 
     @Autowired
@@ -42,7 +44,7 @@ public class CourseController {
 
     @GetMapping("/")
     public List<Course> findAll() {
-        return courses;
+        return courses  ;
     }
 
     @GetMapping("/{name}")
